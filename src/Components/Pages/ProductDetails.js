@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import { CardContext } from "../Context/cardContext";
+import ContactForm from "../Forms/ContactForm";
 
 const ProductDetails = () => {
-  const { card } = useContext(CardContext);
+  const { card, showModal, setShowModal } = useContext(CardContext);
 
   return (
     <div className="py-20">
@@ -22,9 +23,12 @@ const ProductDetails = () => {
               soluta modi maiores, omnis alias, repellat suscipit officia
               ratione quis, dolor animi voluptatibus? Libero?
             </p>
-            <button className="bg-blue-500 text-white py-2 px-10 rounded-sm drop-shadow mt-2 hover:drop-shadow-lg transition">
+            <button
+              className="bg-blue-500 text-white py-2 px-10 rounded-sm drop-shadow mt-2 hover:drop-shadow-lg transition"
+              onClick={() => setShowModal(true)}>
               Enquiry
             </button>
+            {showModal && <ContactForm />}
           </div>
         </div>
       </div>

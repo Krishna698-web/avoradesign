@@ -51,7 +51,7 @@ const CardsCollection = () => {
       <div className="grid lg:grid-cols-4 md:grid-cols-3 max-sm:grid-cols-2 gap-4 lg:w-1/2 md:w-4/5">
         {cards.map((card, i) => (
           <Link to={`/products/${card.name}`}>
-            <Card key={i} card={card} />
+            <Card key={card.name} card={card} />
           </Link>
         ))}
       </div>

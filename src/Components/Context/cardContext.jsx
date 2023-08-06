@@ -4,9 +4,10 @@ export const CardContext = createContext({});
 
 const CardContextProvider = ({ children }) => {
   const [card, setCard] = useState({});
+  const [showModal, setShowModal] = useState(false);
 
   return (
-    <CardContext.Provider value={{ card, setCard }}>
+    <CardContext.Provider value={{ card, setCard, showModal, setShowModal }}>
       {children}
     </CardContext.Provider>
   );
