@@ -1,8 +1,61 @@
-import React from "react";
+import React, { useContext } from "react";
 import Modal from "../UI/Modal";
+import Input from "../UI/Input";
+import Button from "../UI/Button";
+import { CardContext } from "../Context/cardContext";
 
 const ContactForm = () => {
-  return <Modal>ContactForm</Modal>;
+  const { setShowModal } = useContext(CardContext);
+  const submitHandler = (e) => {
+    e.preventDefault();
+  };
+  return (
+    <Modal>
+      <div
+        className="absolute h-full w-full bg-slate-400 bg-opacity-25 backdrop-blur-sm"
+        onClick={() => setShowModal(false)}></div>
+      <form
+        onSubmit={submitHandler}
+        className="lg:w-1/3 md:w-5/12 sm:w-10/12 max-sm:w-10/12 relative z-20 bg-white py-4 px-6 rounded-md drop-shadow-md">
+        <h1></h1>
+        <div className="mt-3">
+          <Input type="text" id="name" label={"Name"} placeholder="Kamlesh" />
+        </div>
+        <div className="mt-3">
+          <Input
+            type="number"
+            id="number"
+            label={"Mobile Number"}
+            placeholder="### ### ####"
+          />
+        </div>
+        <div className="mt-3">
+          <Input
+            type={"email"}
+            id={"email"}
+            label={"Email"}
+            placeholder="kamlesh@gmail.com"
+          />
+        </div>
+        <div className="mt-3">
+          <label htmlFor="info" className="block font-semibold ml-1">
+            Enquiry about
+          </label>
+          <textarea
+            name="info"
+            id="info"
+            className="border w-full py-2
+            px-3
+            rounded-sm"></textarea>
+        </div>
+        <Button
+          onClick={() => setShowModal(false)}
+          btnValue={"Submit"}
+          className={"mx-auto block "}
+        />
+      </form>
+    </Modal>
+  );
 };
 
 export default ContactForm;

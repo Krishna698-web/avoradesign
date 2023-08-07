@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const IntroSection = () => {
   return (
@@ -9,9 +10,11 @@ const IntroSection = () => {
           creative tools&nbsp;
           <span className="text-2xl text-blue-800">in your hand.</span>
         </h1>
-        <button className="py-2 px-8 text-white bg-blue-800 rounded-full mt-10 drop-shadow-lg hover:bg-white  hover:text-blue-800 transition">
-          Explore
-        </button>
+        <Link to={"/services"}>
+          <button className="py-2 px-8 text-white bg-blue-800 rounded-full mt-10 drop-shadow-lg hover:bg-white  hover:text-blue-800 transition">
+            Explore
+          </button>
+        </Link>
       </header>
     </>
   );

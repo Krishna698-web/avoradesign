@@ -1,9 +1,18 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { CardContext } from "../Context/cardContext";
 import ContactForm from "../Forms/ContactForm";
+import Button from "../UI/Button";
 
 const ProductDetails = () => {
-  const { card, showModal, setShowModal } = useContext(CardContext);
+  const { setCard, card, showModal, setShowModal } = useContext(CardContext);
+
+  useEffect(() => {
+    // console.log(JSON.parse(JSON.stringify(localStorage.getItem("card"))));
+    // setCard(JSON.parse(JSON.stringify(localStorage.getItem("card"))));
+    // console.log(card);
+    // console.log(card.name);
+    setCard(card);
+  }, [card]);
 
   return (
     <div className="py-20">
@@ -12,8 +21,8 @@ const ProductDetails = () => {
           <div className="lg:w-1/2 lg:h-full md:w-full sm:w-full max-sm:w-full">
             <img src={card.src} alt={card.name} className="w-full" />
           </div>
-          <div className="lg:w-1/2 lg:h-full md:w-full sm:w-full max-sm:w-full text-left py-4 lg:px-10 px-5">
-            <h1 className="font-semibold lg:text-4xl text-2xl">{card.name}</h1>
+          <div className="lg:w-1/2 lg:h-full md:w-full sm:w-full max-sm:w-full text-left py-4 lg:px-10 px-5 ">
+            <h1 className="font-bold lg:text-4xl text-3xl">{card.name}</h1>
             <p className="text-xl text-gray-700 my-3">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas
               error nam mollitia unde veniam ex, aliquam vitae ut odit,
@@ -23,11 +32,7 @@ const ProductDetails = () => {
               soluta modi maiores, omnis alias, repellat suscipit officia
               ratione quis, dolor animi voluptatibus? Libero?
             </p>
-            <button
-              className="bg-blue-500 text-white py-2 px-10 rounded-sm drop-shadow mt-2 hover:drop-shadow-lg transition"
-              onClick={() => setShowModal(true)}>
-              Enquiry
-            </button>
+            <Button btnValue={"Enquiry"} onClick={() => setShowModal(true)} />
             {showModal && <ContactForm />}
           </div>
         </div>

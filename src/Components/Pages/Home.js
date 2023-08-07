@@ -1,5 +1,5 @@
 import React from "react";
-import IntroSection from "../Header/IntroSection";
+import IntroSection from "../Layout/IntroSection";
 import CardsCollection from "../Cards/CardsCollection";
 
 const Home = () => {
