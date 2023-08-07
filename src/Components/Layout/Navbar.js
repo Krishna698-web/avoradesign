@@ -9,7 +9,9 @@ const Navbar = () => {
 
   return (
     <nav className="fixed z-20 w-full bg-white drop-shadow-md flex justify-between items-center px-8">
-      <div className="cursor-pointer">Avora Design</div>
+      <Link to="/">
+        <div className="cursor-pointer">Avora Design</div>
+      </Link>
       <ul className="lg:flex md:flex sm:hidden max-sm:hidden cursor-pointer font-semibold">
         <Link to="/">
           <li className={listStyles} onClick={() => setClicked(true)}>

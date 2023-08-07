@@ -11,7 +11,7 @@ const IntroSection = () => {
           <span className="text-2xl text-blue-800">in your hand.</span>
         </h1>
         <Link to={"/services"}>
-          <button className="py-2 px-8 text-white bg-blue-800 rounded-full mt-10 drop-shadow-lg hover:bg-white  hover:text-blue-800 transition">
+          <button className="text-lg py-2 px-10 text-white bg-blue-800 rounded-full mt-10 drop-shadow-lg hover:bg-white hover:text-blue-800 transition">
             Explore
           </button>
         </Link>

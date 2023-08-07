@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { CardContext } from "../Context/cardContext";
 import { Link } from "react-router-dom";
+import Button from "../UI/Button";
 
 const Card = ({ card, onClick }) => {
   return (
@@ -14,6 +15,7 @@ const Card = ({ card, onClick }) => {
           className="h-4/5 rounded-md m-auto"
         />
         <h3 className="text-xl mt-4 font-semibold">{card.name}</h3>
+        {/* <Button btnValue={"Details"} onClick={onClick} /> */}
       </div>
     </Link>
   );
