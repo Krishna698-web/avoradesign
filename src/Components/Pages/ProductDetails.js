@@ -39,9 +39,8 @@ const ProductDetails = () => {
             {showModal && <ContactForm />}
           </div>
         </div>
-        <div className=" mt-20">
-          <h3 className="text-3xl font-semibold">Related products:</h3>
-          <CardsCollection cards={remainingCards} />
+        <div className="flex flex-col items-center mt-20">
+          <CardsCollection cards={remainingCards} label={"Related products"} />
         </div>
       </div>
     </div>

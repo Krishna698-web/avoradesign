@@ -7,6 +7,7 @@ import Navbar from "./Components/Layout/Navbar";
 import ProductDetails from "./Components/Pages/ProductDetails";
 import Footer from "./Components/Layout/Footer";
 import Services from "./Components/Pages/Services";
+import Widget from "./Components/Layout/Widget";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="services" element={<Services />} />
         <Route path="/products/:productId" element={<ProductDetails />} />
       </Routes>
+      <Widget />
       <Footer />
     </div>
   );

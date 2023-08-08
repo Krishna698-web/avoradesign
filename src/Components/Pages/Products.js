@@ -6,9 +6,8 @@ const Products = () => {
   const { cards } = useContext(CardContext);
 
   return (
-    <div className="w-full py-28">
-      <h1 className="text-4xl font-bold text-blue-900">Products</h1>
-      <CardsCollection cards={cards} />
+    <div className="w-full py-20 bg-gray-50">
+      <CardsCollection cards={cards} label={"Products"} />
     </div>
   );
 };

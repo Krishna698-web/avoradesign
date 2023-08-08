@@ -7,7 +7,7 @@ const Card = ({ card, onClick }) => {
   return (
     <Link to={`/products/${card.name}`}>
       <div
-        className="h-full text-center border p-4 rounded-md cursor-pointer transition"
+        className="h-full text-center p-4 border rounded-md cursor-pointer bg-white hover:drop-shadow-md transition "
         onClick={onClick}>
         <img
           src={card.src}
