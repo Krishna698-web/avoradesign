@@ -11,7 +11,7 @@ const CardsCollection = ({ cards, label }) => {
   };
 
   return (
-    <div className="w-full flex flex-col justify-center items-center py-10 ">
+    <div className="w-full flex flex-col justify-center items-center py-10 px-2">
       <h2 className="text-left text-4xl font-bold text-blue-950 lg:w-1/2 md:w-4/5 mb-5 ml-1">
         {label}
       </h2>

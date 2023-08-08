@@ -23,10 +23,19 @@ const CardContextProvider = ({ children }) => {
   ];
   const [card, setCard] = useState({});
   const [showModal, setShowModal] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
   return (
     <CardContext.Provider
-      value={{ card, setCard, showModal, setShowModal, cards }}>
+      value={{
+        card,
+        setCard,
+        showModal,
+        setShowModal,
+        cards,
+        showMenu,
+        setShowMenu,
+      }}>
       {children}
     </CardContext.Provider>
   );

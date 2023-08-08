@@ -1,11 +1,13 @@
 import React from "react";
 
 const Dealing = () => {
-  const divClasses = "border-r  w-1/3";
-  const headingClasses = "text-slate-500 font-semibold text-lg";
+  const divClasses =
+    "border-r w-1/3 sm:w-full max-sm:w-full sm:border-b max-sm:border-b";
+  const headingClasses = " text-slate-500 text-lg";
   const spanClasses = "text-blue-800 font-extrabold text-5xl";
+
   return (
-    <div className="lg:w-1/2 md:w-4/5 mx-auto flex flex-wrap border justify-around items-center rounded-md mt-10 py-7">
+    <div className="lg:w-1/2 md:w-4/5 sm:w-11/12 max-sm:w-10/12 mx-auto grid md:grid-cols-3 sm:grid-cols-1 max-sm:grid-cols-1 max-sm:border rounded-md mt-10 py-7">
       <div className={divClasses}>
         <h3 className={headingClasses}>Operating in</h3>
         <div>
@@ -24,7 +26,7 @@ const Dealing = () => {
         </div>
       </div>
 
-      <div className="  w-1/3">
+      <div className={"w-1/3 sm:w-full max-sm:w-full border-r border-b"}>
         <h3 className={headingClasses}>Happy Customers</h3>
         <div>
           <span className={spanClasses}>

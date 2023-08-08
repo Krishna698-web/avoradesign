@@ -5,7 +5,7 @@ import Button from "../UI/Button";
 import CardsCollection from "../Cards/CardsCollection";
 
 const ProductDetails = () => {
-  const { setCard, card, showModal, setShowModal, cards } =
+  const { setCard, card, showModal, setShowModal, cards, setShowMenu } =
     useContext(CardContext);
   const remainingCards = cards.filter((c) => c.id !== card.id);
 
@@ -15,11 +15,12 @@ const ProductDetails = () => {
     // console.log(card);
     // console.log(card.name);
     setCard(card);
+    setShowMenu(false);
   }, []);
 
   return (
     <div className="py-20">
-      <div className="w-full py-14 flex flex-col justify-center items-center">
+      <div className="w-full py-14 max-sm:py-8 flex flex-col justify-center items-center">
         <div className="w-4/5 flex flex-wrap rounded-lg overflow-hidden border">
           <div className="lg:w-1/2 lg:h-full md:w-full sm:w-full max-sm:w-full">
             <img src={card.src} alt={card.name} className="w-full" />

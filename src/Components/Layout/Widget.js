@@ -7,7 +7,7 @@ const Widget = () => {
   const [showWidget, setShowWidget] = useState(false);
 
   return (
-    <div className="fixed bottom-10 left-5 w-1/5">
+    <div className="fixed bottom-10 left-5 lg:w-1/5 md:w-1/4 sm:w-1/2 max-sm:w-1/2">
       {showWidget && (
         <div className="flex flex-col items-start rounded-md overflow-hidden mb-2 ml-2 bg-slate-500 shadow-2xl drop-shadow-lg transition-all">
           <div className="flex gap-2 items-center bg-green-900 p-3 w-full">
