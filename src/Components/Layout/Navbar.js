@@ -1,11 +1,17 @@
-import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { CardContext } from "../Context/cardContext";
 
 const Navbar = () => {
   const [clicked, setClicked] = useState(false);
 
   const { showMenu, setShowMenu } = useContext(CardContext);
+
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    console.log(pathname);
+  }, []);
 
   const classNameForMenu = showMenu
     ? "absolute flex flex-col top-16 bg-white left-0 w-full"
