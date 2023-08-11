@@ -9,16 +9,32 @@ const Navbar = () => {
 
   const { pathname } = useLocation();
 
-  useEffect(() => {
-    console.log(pathname);
-  }, []);
+  let subpage = pathname.split("/")?.[1];
+
+  if (subpage === undefined || subpage === null || subpage === "") {
+    subpage = "/";
+  }
+  console.log({ subpage });
+
+  const setClasses = (type = null) => {
+    let listStyles = "p-5 font-bold transition";
+    if (subpage === type) {
+      listStyles +=
+        " text-blue-800 lg:border-b-2 lg:border-b-blue-500 md:border-b-2 md:border-b-blue-500 max-sm:bg-slate-100";
+    } else {
+      listStyles += " text-slate-800";
+    }
+
+    return listStyles;
+  };
+
+  // console.log(setClasses());
 
   const classNameForMenu = showMenu
     ? "absolute flex flex-col top-16 bg-white left-0 w-full"
     : "max-sm:hidden";
 
   const barClassname = "bg-blue-900 block h-1";
-  const listStyles = `${clicked ? "text-blue-800" : "text-black"} p-5`;
 
   return (
     <nav
@@ -28,25 +44,17 @@ const Navbar = () => {
         <div className="cursor-pointer">Avora Design</div>
       </Link>
       <ul className={`${classNameForMenu} flex font-semibold`}>
-        <Link to="/">
-          <li className={listStyles} onClick={() => setClicked(true)}>
-            Home
-          </li>
+        <Link className={setClasses("/")} to="/">
+          <li>Home</li>
         </Link>
-        <Link to="/products">
-          <li className={listStyles} onClick={() => setClicked(true)}>
-            Products
-          </li>
+        <Link className={setClasses("products")} to="/products">
+          <li>Products</li>
         </Link>
-        <Link to="/aboutus">
-          <li className={listStyles} onClick={() => setClicked(true)}>
-            About Us
-          </li>
+        <Link className={setClasses("aboutus")} to="/aboutus">
+          <li>About Us</li>
         </Link>
-        <Link to="/services">
-          <li className={listStyles} onClick={() => setClicked(true)}>
-            Services
-          </li>
+        <Link className={setClasses("services")} to="/services">
+          <li>Services</li>
         </Link>
       </ul>
       <div

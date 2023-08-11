@@ -39,8 +39,10 @@ const Services = () => {
         Services available.
       </h1>
       <div className="w-1/2 md:w-3/5 sm:w-10/12 max-sm:w-11/12 grid lg:grid-cols-3 md:grid-cols-2 gap-3 sm:grid-cols-1 max-sm:grid-cols-1 py-8">
-        {tiles.map((tile) => (
-          <div className={className}>{tile}</div>
+        {tiles.map((tile, i) => (
+          <div key={i} className={className}>
+            {tile}
+          </div>
         ))}
       </div>
     </div>
