@@ -14,7 +14,6 @@ const Navbar = () => {
   if (subpage === undefined || subpage === null || subpage === "") {
     subpage = "/";
   }
-  console.log({ subpage });
 
   const setClasses = (type = null) => {
     let listStyles = "p-5 font-bold transition";
@@ -27,8 +26,6 @@ const Navbar = () => {
 
     return listStyles;
   };
-
-  // console.log(setClasses());
 
   const classNameForMenu = showMenu
     ? "absolute flex flex-col top-16 bg-white left-0 w-full"
