@@ -20,25 +20,6 @@ const ContactForm = () => {
   const submitHandler = (e) => {
     e.preventDefault();
 
-    // console.log({ userName, userEmail, UserNumber, message });
-    // console.log(emailjs);
-
-    // emailjs
-    //   .sendForm(
-    //     "service_0ek96p4",
-    //     "template_lo0kp76",
-    //     info,
-    //     "S8IHY4PWGbBWNwJK0"
-    //   )
-    //   .then(
-    //     (res) => {
-    //       console.log(res.text);
-    //     },
-    //     (err) => {
-    //       console.log(err.text);
-    //     }
-    //   );
-
     emailjs
       .sendForm(
         "service_0ek96p4",
