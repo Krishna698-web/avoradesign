@@ -12,11 +12,6 @@ const ContactForm = () => {
 
   const form = useRef();
 
-  const [userName, setUserName] = useState();
-  const [userEmail, setUserEmail] = useState();
-  const [UserNumber, setUserNumber] = useState();
-  const [message, setMessage] = useState();
-
   const submitHandler = (e) => {
     e.preventDefault();
 
@@ -56,7 +51,6 @@ const ContactForm = () => {
               name={"user_name"}
               label={"Name"}
               placeholder="Kamlesh"
-              onChange={(e) => setUserName(e.target.value)}
             />
           </div>
           <div className="mt-3">
@@ -66,7 +60,6 @@ const ContactForm = () => {
               name={"user_number"}
               label={"Mobile Number"}
               placeholder="91#####321"
-              onChange={(e) => setUserNumber(e.target.value)}
             />
           </div>
           <div className="mt-3">
@@ -76,7 +69,6 @@ const ContactForm = () => {
               name={"user_email"}
               label={"Email"}
               placeholder="kamlesh@gmail.com"
-              onChange={(e) => setUserEmail(e.target.value)}
             />
           </div>
           <div className="mt-3">
@@ -88,8 +80,7 @@ const ContactForm = () => {
               name={"message"}
               className="border w-full py-2
             px-3
-            rounded-sm"
-              onChange={(e) => setMessage(e.target.value)}></textarea>
+            rounded-sm"></textarea>
           </div>
           <Button
             type="submit"

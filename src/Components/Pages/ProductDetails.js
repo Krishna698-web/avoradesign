@@ -1,12 +1,17 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { CardContext } from "../Context/cardContext";
 import ContactForm from "../Forms/ContactForm";
 import Button from "../UI/Button";
 import CardsCollection from "../Cards/CardsCollection";
+import Input from "../UI/Input";
 
 const ProductDetails = () => {
   const { setCard, card, showModal, setShowModal, cards, setShowMenu } =
     useContext(CardContext);
+
+  let [totalPrice, setTotalPrice] = useState(0);
+  let [quantity, setQuantity] = useState();
+
   const remainingCards = cards.filter((c) => c.id !== card.id);
 
   useEffect(() => {
@@ -17,6 +22,18 @@ const ProductDetails = () => {
     setCard(card);
     setShowMenu(false);
   }, []);
+
+  const quantityHandler = (e) => {
+    if (quantity === NaN) {
+      setTotalPrice(0);
+    } else {
+      setQuantity(e.target.value);
+    }
+  };
+
+  const totalPriceHandler = () => {
+    setTotalPrice(parseInt(quantity) * card.ppu);
+  };
 
   return (
     <div className="py-20">
@@ -36,6 +53,30 @@ const ProductDetails = () => {
               soluta modi maiores, omnis alias, repellat suscipit officia
               ratione quis, dolor animi voluptatibus? Libero?
             </p>
+
+            <div className="flex sm:flex-wrap max-sm:flex-col items-center justify-around max-sm:items-start gap-2 border rounded-sm p-3 my-3">
+              <div className="flex items-center gap-2">
+                <Input
+                  type="number"
+                  label={"Qty"}
+                  className={"md:w-max"}
+                  onChange={quantityHandler}
+                />
+                <span>x</span>
+                <span className="text-lg font-semibold text-gray-500">
+                  {card.ppu}/unit
+                </span>
+              </div>
+              <div className="border flex items-center gap-2 py-2 px-3 rounded-md">
+                <span>Total:</span>
+                <div className="font-semibold text-xl">{totalPrice}</div>
+              </div>
+              <button
+                className="border bg-slate-800 text-white py-2 px-3 rounded-md hover:drop-shadow-lg active:drop-shadow-sm"
+                onClick={totalPriceHandler}>
+                Calculate
+              </button>
+            </div>
             <Button btnValue={"Enquiry"} onClick={() => setShowModal(true)} />
             {showModal && <ContactForm />}
           </div>

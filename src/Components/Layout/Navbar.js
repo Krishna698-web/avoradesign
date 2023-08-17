@@ -3,8 +3,6 @@ import { Link, useLocation } from "react-router-dom";
 import { CardContext } from "../Context/cardContext";
 
 const Navbar = () => {
-  const [clicked, setClicked] = useState(false);
-
   const { showMenu, setShowMenu } = useContext(CardContext);
 
   const { pathname } = useLocation();
