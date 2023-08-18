@@ -16,7 +16,6 @@ const ProductDetails = () => {
 
   useEffect(() => {
     // console.log(JSON.parse(JSON.stringify(localStorage.getItem("card"))));
-    // setCard(JSON.parse(JSON.stringify(localStorage.getItem("card"))));
     // console.log(card);
     // console.log(card.name);
     setCard(card);

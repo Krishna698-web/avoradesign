@@ -7,6 +7,7 @@ const CardsCollection = ({ cards, label }) => {
 
   const passCardHandler = (card) => {
     // localStorage.setItem("card", card);
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     setCard(card);
   };
 
