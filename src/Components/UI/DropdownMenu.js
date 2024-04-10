@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 
 const DropdownMenu = ({ list, onPriceTag }) => {
-  // console.log(list);
   const passPriceHandler = (ele) => {
     onPriceTag(ele);
   };

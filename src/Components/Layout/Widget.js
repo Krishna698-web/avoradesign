@@ -20,7 +20,7 @@ const Widget = () => {
             </div>
             <a
               target="_blank"
-              href="https://wa.me/+917022204986"
+              href="https://wa.me/+919167425088"
               className="flex gap-2 items-center justify-center bg-green-800 text-white mb-2 py-2 px-3 rounded-full">
               Chat <IoMdSend />
             </a>

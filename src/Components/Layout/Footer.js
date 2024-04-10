@@ -37,7 +37,7 @@ const Footer = () => {
         <li>
           <a
             target="_blank"
-            href="https://wa.me/+917022204986"
+            href="https://wa.me/+919167425088"
             className={logoStyles}>
             <BsWhatsapp />
           </a>

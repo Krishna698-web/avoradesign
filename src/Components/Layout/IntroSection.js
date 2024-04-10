@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+// import ImageCarousel from "./ImageCarousel";
 
 const IntroSection = () => {
   return (
     <>
       <header className="flex flex-col justify-center items-center font-bold w-full py-10">
+        {/* <ImageCarousel /> */}
         <h1 className="text-slate-900 text-center lg:w-5/12 md:w-4/5 max-sm:w-10/12 text-8xl md:text-8xl sm:text-6xl max-sm:text-6xl">
           Lets talk <span className="text-blue-900">B</span>usiness with some
           creative tools&nbsp;

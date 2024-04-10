@@ -3,7 +3,6 @@ import { CardContext } from "../Context/cardContext";
 import ContactForm from "../Forms/ContactForm";
 import Button from "../UI/Button";
 import CardsCollection from "../Cards/CardsCollection";
-import Input from "../UI/Input";
 
 import { FaChevronDown } from "react-icons/fa";
 import DropdownMenu from "../UI/DropdownMenu";
